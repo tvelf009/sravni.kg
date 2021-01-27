@@ -29,7 +29,7 @@ export const CategoryItem = ({data}:{data:BestOffers}) => {
         <Box  boxShadow="base" >
             <Box boxShadow="false" border="1px"  borderColor="#E6EAF0" p={4}>
                 <Center>
-                    <Image src={"https://sravni.kg/img/logo/"+ data.partner.logo} h="40px"/>
+                    <Image src={"https://sravni.kg/images/logo/"+ data.partner.logo} h="40px"/>
                 </Center>                
             </Box>
             <Box border="1px"  borderColor="#E6EAF0" p={2} boxShadow="false">

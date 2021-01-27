@@ -48,7 +48,7 @@ export const Result = ({data, bgcolorid, currency, searchCondition}:{data:Credit
             <Grid templateColumns="repeat(12, 1fr)" gap={10} mt={2}>
                 <GridItem  pt={10} pb={10} pl={2} pr={2} colSpan={3}>
                     <Center>
-                        <Image src={"https://sravni.kg/img/logo/" + credit.partner.logo} alt={credit.partner.name} h={41}/>    
+                        <Image src={"https://sravni.kg/images/logo/" + credit.partner.logo} alt={credit.partner.name} h={41}/>    
                     </Center>
                     <Center mt={3}>
                         <Text style={fontStyle1}>

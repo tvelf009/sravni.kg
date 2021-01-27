@@ -66,7 +66,7 @@ export const CrAbout = ({data, condition}:{data:Credits, condition:any}) => {
                 <CurrencyDecorIcon/>
                 <Grid templateColumns="repeat(3, 1fr)" gap={6}>
                     <Box w="100%" >
-                        <Image src={"https://sravni.kg/img/logo/"+ data.partner.logo} />
+                        <Image src={"https://sravni.kg/images/logo/"+ data.partner.logo} />
                     </Box>
                     <Box w="100%" >
                         <Text style={fontStyle1} mt={3}>

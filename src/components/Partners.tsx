@@ -28,7 +28,7 @@ export const Partners = ({partners}:{partners:any[]}) => {
                         {
                             partners.map((item, index) => (
                                 <div key={index} style={{width: "261px"}}>
-                                    <Image src={"https://sravni.kg/img/logo/"+item.logo} />
+                                    <Image src={"https://sravni.kg/images/logo/"+item.logo} />
                                 </div>
                             ))
                         }
