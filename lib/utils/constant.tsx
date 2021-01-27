@@ -1,0 +1,1 @@
+export const SERVER_BASE_URL = `https://sravni.kg:9090/api/v1`;
