@@ -14,6 +14,7 @@ import { Category } from '../components/Category';
 
 
 
+
 const Index = ({currencyData, partnersData, potreb, auto, business, education}: any) => (
 
     <>
