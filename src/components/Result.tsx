@@ -1,6 +1,6 @@
 
 import { Box, Button, Grid, GridItem,  List, ListItem, ListIcon } from '@chakra-ui/react';
-import { Center, Container } from '@chakra-ui/layout';
+import { Center } from '@chakra-ui/layout';
 import { Text } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react"
 import React from 'react';

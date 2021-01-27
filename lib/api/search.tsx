@@ -1,12 +1,6 @@
 import axios from "axios";
 import { SERVER_BASE_URL } from "../utils/constant";
 
-interface getCreditData{
-    amount: number;
-    term: number;
-    purpose: number;
-    currrency: number;
-}
 
 const SearchAPI = {
     partners: () => 

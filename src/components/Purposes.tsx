@@ -1,9 +1,7 @@
-import { Box, Button, Grid, GridItem } from '@chakra-ui/react';
+import { Box, Grid, GridItem } from '@chakra-ui/react';
 import { Container } from '@chakra-ui/layout';
 import { Text } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/react"
 import React from 'react';
-import useSWR from "swr";
 import { BusinessIcon, ConsumerIcon, MedicineIcon, AutoIcon, EducationIcon, BuildIcon } from '../../public/images/icons/icons'
 
 

@@ -1,7 +1,4 @@
-import { Box, Button, Grid, GridItem } from '@chakra-ui/react';
-import { Container } from '@chakra-ui/layout';
-import { Text } from "@chakra-ui/react";
-import { Image } from "@chakra-ui/react"
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 
 

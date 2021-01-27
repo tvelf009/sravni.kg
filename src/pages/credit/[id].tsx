@@ -20,7 +20,7 @@ const CreditPage = () => {
   const condition:ParsedUrlQuery = router.query;
 
 
-  const {data, error} = useSWR("https://sravni.kg:9090/api/v1/products/credits/" + condition.id, fetcher);
+  const {data} = useSWR("https://sravni.kg:9090/api/v1/products/credits/" + condition.id, fetcher);
   const payDetail = useSWR("https://sravni.kg:9090/api/v1/payments?amount=26000&term=3&rate=28&type=annuity", fetcher);
 
   return (

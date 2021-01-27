@@ -1,5 +1,5 @@
 import { Box } from '@chakra-ui/react';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Container, Grid, GridItem  } from '@chakra-ui/layout';
 import { Text } from "@chakra-ui/react";
 import { CurrencyDecorIcon } from '../../public/images/icons/icons'

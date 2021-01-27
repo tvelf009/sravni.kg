@@ -1,10 +1,10 @@
-import { Box, Center, Image, Text, Grid, GridItem, Link  } from '@chakra-ui/react';
+import { Box, Center, Image, Text, Grid, Link  } from '@chakra-ui/react';
 import React from 'react';
 import CSS from 'csstype';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { BestOffers } from '../interfaces/interface';
 import { Divider } from "@chakra-ui/react";
-import { SearchCondition } from '../interfaces/interface';
+
 
 
 const fontStyle1:CSS.Properties = {
@@ -22,7 +22,7 @@ const fontStyle3:CSS.Properties = {
     fontSize: "small"
 }
 
-export const CategoryItem = ({data, condition}:{data:BestOffers, condition:SearchCondition}) => {
+export const CategoryItem = ({data}:{data:BestOffers}) => {
 
 
     return (

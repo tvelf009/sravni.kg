@@ -1,6 +1,6 @@
 import { Box, Button, Collapse, Grid, GridItem } from '@chakra-ui/react';
 import { Container } from '@chakra-ui/layout';
-import { Text, useDisclosure  } from "@chakra-ui/react";
+import { Text  } from "@chakra-ui/react";
 import React from 'react';
 import { CurrencyDecorIcon } from '../../public/images/icons/icons';
 import {NumberInput, NumberInputField, Select  } from "@chakra-ui/react";
@@ -184,7 +184,7 @@ export const CreditSearch = () => {
     const getResult = async() => {
         // const { data, status } = await SearchAPI.all();
         setShow(true)
-        const {data, status} = await SearchAPI.getCredits(amount, term,purpose, currency);
+        const {data} = await SearchAPI.getCredits(amount, term,purpose, currency);
         
         setCredit([]);
         setCredit(data);
