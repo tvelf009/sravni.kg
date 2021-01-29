@@ -3,10 +3,12 @@ import { Container } from '@chakra-ui/layout';
 import { Text } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react"
 import React from 'react';
+import Link from 'next/link';
 
 
 
 export const Banner = () => {
+
 
 
     return (
@@ -16,7 +18,9 @@ export const Banner = () => {
                 <GridItem colSpan={3} >
                     <Text fontSize="4xl" mt="70px">ПОМОЩНИК ПРИ ВЫБОРЕ КРЕДИТА</Text>
                     <Text fontSize="2xl" mt="30px">Сравни условия кредитования банков и других финансово-кредитных учреждений Кыргызстана!</Text>
-                    <Button variant="cus-call" mt="60px">ПОДОБРАТЬ КРЕДИТ</Button>
+                    <Link href="#search">
+                        <Button variant="cus-call" mt="60px">ПОДОБРАТЬ КРЕДИТ</Button>
+                    </Link>
                 </GridItem>
                 <GridItem colStart={4} colEnd={6} h="10" >
                     <Image src="/images/web/banner.png"/>

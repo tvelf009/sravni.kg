@@ -6,10 +6,8 @@ import { Menu,
     Box } from '@chakra-ui/react';
 import React from 'react';
 import { PhoneIcon } from '../../public/images/icons/icons';
-import { HamburgerIcon } from '@chakra-ui/icons'
-
-
-
+import { HamburgerIcon } from '@chakra-ui/icons';
+import Link from 'next/link';
 
 
 export const MainMenu = () => {
@@ -19,12 +17,15 @@ export const MainMenu = () => {
         <Box>
             <Box display={{base: "none", md:"block"}}>
                 <Menu>
-                    <MenuButton
-                        as={Button}
-                        variant="cus-menu"
-                        >
-                            Главная
-                    </MenuButton>
+                    <Link href="/">
+                        <MenuButton
+                            as={Button}
+                            variant="cus-menu">
+                                
+                                    Главная
+                                
+                        </MenuButton>
+                    </Link>
                 </Menu>
                 <Menu>
                 <MenuButton 
