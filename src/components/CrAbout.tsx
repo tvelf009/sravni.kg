@@ -4,7 +4,6 @@ import React from 'react';
 import { CurrencyDecorIcon } from '../../public/images/icons/icons';
 import { Credits, Purposes } from '../interfaces/interface';
 import CSS from 'csstype';
-import Link from 'next/link';
 
 const purposesArray: Purposes[] = [
     {
@@ -77,11 +76,11 @@ export const CrAbout = ({data, condition}:{data:Credits, condition:any}) => {
                         </Text>
                     </Box>
                     <Box w="100%">
-                        <Link href={data.partnerCreditUrl} target="_blank">
+                        <a href={data.partnerCreditUrl} target="_blank">
                             <Button style={buttonStyle1}>
                                 Перейти на сайт банка
                             </Button>
-                        </Link>
+                        </a>
 
                     </Box>
                 </Grid>
