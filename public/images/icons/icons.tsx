@@ -245,7 +245,7 @@ export const CheckIcon = (props:any) => (
 )
 
 
-export const DotIcon = (props:any) => (
+export const DotIcon = () => (
 <Icon viewBox="0 0 200 200" color="red.500">
 <path
 fill="currentColor"
