@@ -1,4 +1,4 @@
-import { Box, Icon } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 import { Container, Grid, GridItem  } from '@chakra-ui/layout';
 import { Text } from "@chakra-ui/react";
@@ -24,7 +24,7 @@ export const Currency = ({data}: {data:any}) => {
             <Grid templateColumns="repeat(5, 1fr)" gap={6} mt={3}>
                 <GridItem rowSpan={2} colSpan={1} >
                     <Text>
-                        USD $  84.80 сом
+                        USD $  {data.USDKGS} сом
                     </Text>
                 </GridItem>
                 <GridItem rowSpan={2} colSpan={1} >
