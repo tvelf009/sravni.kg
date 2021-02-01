@@ -1,3 +1,5 @@
+import { Url } from "url";
+
 export interface Purposes{
     id: number;
     name: string;
@@ -56,6 +58,7 @@ export interface Credits{
     description: string;
     requirement: Requirement;
     documents: IdName[];
+    partnerCreditUrl: Url;
 }
 
 

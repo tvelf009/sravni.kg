@@ -21,7 +21,7 @@ const CreditPage = () => {
 
 
   const {data} = useSWR("https://sravni.kg:9090/api/v1/products/credits/" + condition.id, fetcher);
-  const payDetail = useSWR("https://sravni.kg:9090/api/v1/payments?amount=26000&term=3&rate=28&type=annuity", fetcher);
+  const payDetail = useSWR("https://sravni.kg:9090/api/v1/payments?amount=" + condition.amount + "&term=" + condition.term + "&rate=" + condition.rate + "8&type=annuity", fetcher);
 
   console.log(payDetail);
   
@@ -49,7 +49,7 @@ const CreditPage = () => {
       
       {
         payDetail != null? (
-          <Calculate data={payDetail.data}/>
+          <Calculate data={payDetail.data} condition={condition.rate}/>
         ):(
           <h1>Загрузка</h1>
         )

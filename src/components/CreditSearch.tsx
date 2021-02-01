@@ -155,7 +155,7 @@ export const CreditSearch = () => {
     const [termName, setTermName] = React.useState(termArray[0].name);
     const [purposeName, setPurposeName] = React.useState(purposesArray[0].name);
     const [show, setShow] = React.useState(false);
-    const [searchCondition] =  React.useState<SearchCondition>({
+    const [searchCondition, setSearchCondition] =  React.useState<SearchCondition>({
         amount: amount,
         purposeId: purpose,
         currency: currency,
@@ -169,7 +169,7 @@ export const CreditSearch = () => {
 
     const termChange = (e:any) => {
         setShow(false)
-        setTermName(termArray[e.nativeEvent.target.selectedIndex-1].name)
+        setTermName(termArray[e.nativeEvent.target.selectedIndex].name)
         setTerm(e.target.value)
     }
 
@@ -188,6 +188,13 @@ export const CreditSearch = () => {
         // const { data, status } = await SearchAPI.all();
         setShow(true)
         const {data} = await SearchAPI.getCredits(amount, term,purpose, currency);
+
+        setSearchCondition({
+            amount: amount,
+            purposeId: purpose,
+            currency: currency,
+            term: term
+        })
         
         setCredit([]);
         setCredit(data);
@@ -286,7 +293,7 @@ export const CreditSearch = () => {
                 </Box>
                 <Container maxWidth="xl" pt={5}>
                     {credit.map((item, index) => (
-                        <Result data={item}  bgcolorid={index} key={index} currency={currency} searchCondition={searchCondition}  />
+                        <Result data={item}  bgcolorid={index} key={index} currency={currency} searchCondition={searchCondition} />
                     ))}
                 </Container>
             </Collapse>

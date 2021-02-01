@@ -115,6 +115,7 @@ export const Result = ({data, bgcolorid, currency, searchCondition}:{data:Credit
                                     currency: searchCondition.currency,
                                     term: searchCondition.term,
                                     purposeId: searchCondition.purposeId,
+                                    rate: credit.payment.percentRate
                                 },
                               }}
                         >

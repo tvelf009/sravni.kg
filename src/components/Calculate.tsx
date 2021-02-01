@@ -28,7 +28,7 @@ const fontStyle2:CSS.Properties = {
     fontWeight: 600
 }
 
-export const Calculate = ({data}:{data:PayDetail[]}) => {
+export const Calculate = ({data, condition}:{data:PayDetail[], condition:any}) => {
 
     if(data === undefined){
         data = [];
@@ -118,12 +118,12 @@ export const Calculate = ({data}:{data:PayDetail[]}) => {
 
                     </GridItem>
                     <GridItem colSpan={3}>
-                        <Box bg="#F7F9FA" pt={5} pl={2}> 
+                        <Box bg="#F7F9FA" pt={5} pl={2} pb={5} > 
                             <Text style={fontStyle1}>
                                 Ставка
                             </Text>
                             <Text style={fontStyle2} mt={3}>
-                                от 21 % в год.
+                                от {condition} % в год.
                             </Text>
                             <Text style={fontStyle1} mt={8}>
                                 Ежемесячный платёж:
@@ -131,9 +131,6 @@ export const Calculate = ({data}:{data:PayDetail[]}) => {
                             <Text style={fontStyle2} mt={3}>
                                 {data[0] != undefined? "от " + data[0].monthlyPayment + " сом" : "загрузка"}
                             </Text>
-                            <Button variant="cus-call" mt={5} mb={5}>
-                                Оформить кредит онлайн
-                            </Button>
                         </Box>
                     </GridItem>
                 </Grid>
