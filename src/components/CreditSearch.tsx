@@ -8,6 +8,9 @@ import SearchAPI from '../../lib/api/search';
 import { Purposes, Currency, Term, SearchCondition } from '../interfaces/interface';
 import { Result } from './Result';
 import CSS from 'csstype';
+import NumberFormat from 'react-number-format';
+
+
 
 const fontStyle3: CSS.Properties = {
     fontSize: "large",
@@ -222,9 +225,11 @@ export const CreditSearch = () => {
                 <Grid templateColumns="repeat(2, 1fr)" gap={10} mt={10}>
                     <Box w="100%" >
                         <Text mb="8px">Сумма кредита: </Text>
+                        
                         <NumberInput value={amount} onChange={hanlderChange} >
                             <NumberInputField {...squardStyle} />
                         </NumberInput>
+                        
                     </Box>
                     <Box w="100%" >
                         <Grid templateColumns="repeat(2,1fr)" gap={10}>
@@ -257,7 +262,7 @@ export const CreditSearch = () => {
                                     Вы выбрали кредит на сумму
                                 </Text>
                                 <Text style={fontStyle3}>
-                                    {amount} {currency == 1 ? " сом" : " $"} 
+                                ~ <NumberFormat value={amount} displayType={'text'} thousandSeparator={" "}  />{currency == 1 ? " сом" : " $"} 
                                 </Text>
                             </GridItem>
                             <GridItem colSpan={4}>

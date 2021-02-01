@@ -6,6 +6,7 @@ import React from 'react';
 import CSS from 'csstype';
 import { CurrencyDecorIcon, SomIcon, UsdIcon } from '../../public/images/icons/icons';
 import { Credits } from '../interfaces/interface';
+import NumberFormat from 'react-number-format';
 
 const fontStyle1:CSS.Properties = {
     fontSize: "14px",
@@ -70,7 +71,7 @@ export const Appointment = ({data}:{data:Credits}) => {
                                     Сумма кредита
                                 </Text>
                                 <Text style={fontStyle4}>
-                                    от {item.amountLimit.min}{item.currency.code === "KGS" ? " Сом" : " $"} до {item.amountLimit.max}{item.currency.code === "KGS" ? " Сом" : " $"} 
+                                    от <NumberFormat value={item.amountLimit.min} displayType={'text'} thousandSeparator={' '} />{item.currency.code === "KGS" ? " Сом" : " $"} до <NumberFormat value={item.amountLimit.max} displayType={'text'} thousandSeparator={' '} />{item.currency.code === "KGS" ? " Сом" : " $"} 
                                 </Text>
                             </GridItem>
                             <GridItem colSpan={5}>

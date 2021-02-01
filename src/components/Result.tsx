@@ -7,7 +7,8 @@ import React from 'react';
 import { Credit, SearchCondition } from '../interfaces/interface';
 import CSS from 'csstype';
 import { MdCheckCircle } from "react-icons/md";
-import Link from 'next/link'
+import Link from 'next/link';
+import NumberFormat from 'react-number-format';
 
 
 
@@ -40,8 +41,6 @@ export const Result = ({data, bgcolorid, currency, searchCondition}:{data:Credit
 
     const [credit] = React.useState(data);
 
-    console.log(searchCondition);
-    
 
     return (
         <Box bg={bgcolorid % 2 === 0 ? "#FFF" : "#F4F5F5"} mt={2} border="1px" borderColor="#E6EAF0">
@@ -82,13 +81,13 @@ export const Result = ({data, bgcolorid, currency, searchCondition}:{data:Credit
                         Ежемесячно
                     </Text>
                     <Text style={fontStyle3}>
-                        ~{credit.payment.monthlyPayment} {currency === 1 ? " с/мес" : " $/мес"}
+                        ~ <NumberFormat value={credit.payment.monthlyPayment} displayType={'text'} thousandSeparator={' '} />{currency === 1 ? " с/мес" : " $/мес"}
                     </Text>
                     <Text style={fontStyle2}>
                         Переплата
                     </Text>
                     <Text style={fontStyle4}>
-                        ~{parseFloat(credit.payment.percentPayment).toFixed(2)} {currency === 1 ? " сом" : " $"}
+                        ~ <NumberFormat value={parseFloat(credit.payment.percentPayment).toFixed(2)} displayType={'text'} thousandSeparator={' '} />{currency === 1 ? " сом" : " $"}
                     </Text>
                 </GridItem>
                 <GridItem  colSpan={3} >
