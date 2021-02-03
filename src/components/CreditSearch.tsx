@@ -91,10 +91,6 @@ const termArray: Term[] = [
         name: "1 год"
     },
     {
-        id: 13,
-        name: "13 месяцев"
-    },
-    {
         id: 18,
         name: "18 месяцев"
     },

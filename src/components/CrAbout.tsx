@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Image } from '@chakra-ui/react';
-import { Container, Text } from '@chakra-ui/layout';
+import { Container, GridItem, Text } from '@chakra-ui/layout';
 import React from 'react';
 import { CurrencyDecorIcon } from '../../public/images/icons/icons';
 import { Credits, Purposes } from '../interfaces/interface';
@@ -63,26 +63,26 @@ export const CrAbout = ({data, condition}:{data:Credits, condition:any}) => {
                     О Банке
                 </Text>
                 <CurrencyDecorIcon/>
-                <Grid templateColumns="repeat(3, 1fr)" gap={6}>
-                    <Box w="100%" >
+                <Grid templateColumns="repeat(12, 1fr)" gap={6}>
+                    <GridItem colSpan={4} >
                         <Image src={"https://sravni.kg/images/logo/"+ data.partner.logo} />
-                    </Box>
-                    <Box w="100%" >
+                    </GridItem>
+                    <GridItem colSpan={5} >
                         <Text style={fontStyle1} mt={3}>
                             {purposesArray[condition.purposeId].name}
                         </Text>
                         <Text style={fontStyle2} mt={3}>
                             Кредит "{data.title}"
                         </Text>
-                    </Box>
-                    <Box w="100%">
+                    </GridItem>
+                    <GridItem colSpan={3}>
                         <a href={data.partnerCreditUrl} target="_blank">
                             <Button style={buttonStyle1}>
                                 Перейти на сайт банка
                             </Button>
                         </a>
 
-                    </Box>
+                    </GridItem>
                 </Grid>
             </Container>
         </Box>

@@ -8,7 +8,7 @@ const SearchAPI = {
     getCredits: (amount:number, term:number, purpose:number, currency:number) => 
         axios.get(`${SERVER_BASE_URL}/products/credits/search?amount=${amount}&term=${term}&purpose=${purpose}&currency=${currency}`),
     getCurrency: () =>
-        axios.get("http://api.currencylayer.com/live?access_key=c7faf12f4f667ba22c3761eca18e5873&currencies=KGS,EUR,RUB,KZT"),
+        axios.get(`${SERVER_BASE_URL}/exchange-rates`),
     offersPotreb: () =>
         axios.get(`${SERVER_BASE_URL}/products/credits/top?purpose=1`),
     offersAuto: () =>

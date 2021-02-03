@@ -58,16 +58,10 @@ export const Result = ({data, bgcolorid, currency, searchCondition}:{data:Credit
                 </GridItem>
                 <GridItem  colSpan={2} >
                     <Text style={fontStyle2}>
-                        Ставка
+                        Процентная ставка
                     </Text>
                     <Text style={fontStyle3}>
                         ~{credit.payment.percentRate} % в год
-                    </Text>
-                    <Text style={fontStyle2} mt={1}>
-                        Эффективная ставка
-                    </Text>
-                    <Text style={fontStyle3}>
-                        ~{credit.payment.effectiveRate} % в год
                     </Text>
                     <Text style={fontStyle2} mt={1}>
                         Коммиссия
@@ -75,16 +69,22 @@ export const Result = ({data, bgcolorid, currency, searchCondition}:{data:Credit
                     <Text style={fontStyle3}>
                         ~{credit.payment.commission} % 
                     </Text>
+                    <Text style={fontStyle2} mt={1}>
+                        Эффективная ставка
+                    </Text>
+                    <Text style={fontStyle3}>
+                        ~{credit.payment.effectiveRate} % в год
+                    </Text>
                 </GridItem>
                 <GridItem  colSpan={2} >
                     <Text style={fontStyle2}>
-                        Ежемесячно
+                        Ежемесячные выплаты
                     </Text>
                     <Text style={fontStyle3}>
                         ~ <NumberFormat value={credit.payment.monthlyPayment} displayType={'text'} thousandSeparator={' '} />{currency === 1 ? " с/мес" : " $/мес"}
                     </Text>
-                    <Text style={fontStyle2}>
-                        Переплата
+                    <Text style={fontStyle2} mt={1}>
+                        Итого сумма процентов
                     </Text>
                     <Text style={fontStyle4}>
                         ~ <NumberFormat value={parseFloat(credit.payment.percentPayment).toFixed(2)} displayType={'text'} thousandSeparator={' '} />{currency === 1 ? " сом" : " $"}

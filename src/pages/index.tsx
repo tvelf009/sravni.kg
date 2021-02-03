@@ -13,8 +13,6 @@ import { Category } from '../components/Category';
 
 
 
-
-
 const Index = ({currencyData, partnersData, potreb, auto, business, education}: any) => (
 
     <>
@@ -51,7 +49,7 @@ export async function getStaticProps() {
   return{
     props:{
       partnersData: partners.data,
-      currencyData: currency.data.quotes,
+      currencyData: currency.data.currencies,
       potreb: potreb.data,
       auto: auto.data,
       business: business.data,

@@ -53,11 +53,13 @@ export const Calculate = ({data, condition}:{data:PayDetail[], condition:any}) =
                             <GridItem colSpan={10}>
                                 <Text>Информация</Text>
                                 <Text>
-                                Данный расчет является примерно-ориентированным. Окончательный график погашения необходимо уточнять у банковского сотрудника. Тут чисто что бы примерно понимать сколько будете платить. Разница с банковскими данными могут быть не значительна.
+                                Данный график погашения является примерным. Окончательный
+график погашения уточните у банковского сотрудника. Разница
+данных может быть не значительной.
                                 </Text>
                             </GridItem>
                         </Grid>
-                        <Grid templateColumns="repeat(12, 1fr)" gap={6} style={gridStyle}>
+                        <Grid templateColumns="repeat(12, 1fr)" gap={6} style={gridStyle} mt={5}>
                             <GridItem colSpan={2} >
                                 <Center p={3}>
                                     Месяцы

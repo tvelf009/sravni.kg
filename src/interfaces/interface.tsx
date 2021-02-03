@@ -107,3 +107,8 @@ export interface PayDetail{
     creditPayment: number;
     debt: number;
 }
+
+export interface Currencies{
+    currency: string;
+    value: number
+}
