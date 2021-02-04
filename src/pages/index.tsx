@@ -17,7 +17,7 @@ const Index = ({currencyData, partnersData, potreb, auto, business, education}: 
 
     <>
       <Head>
-        <title>Sravni.KG | Кредиты для счастья</title>
+        <title>Sravni.KG | Ваш помощник при выборе кредита</title>
       </Head>
       <TopHeader/>
       <Header/>
