@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Image, SimpleGrid } from '@chakra-ui/react';
+import { Box, Button, Image, SimpleGrid } from '@chakra-ui/react';
 import { Container, GridItem, Text } from '@chakra-ui/layout';
 import React from 'react';
 import { CurrencyDecorIcon } from '../../public/images/icons/icons';

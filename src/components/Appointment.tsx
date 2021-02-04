@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, ListItem, ListIcon, SimpleGrid } from '@chakra-ui/react';
+import { Box, GridItem, ListItem, ListIcon, SimpleGrid } from '@chakra-ui/react';
 import { Container } from '@chakra-ui/layout';
 import { Text } from "@chakra-ui/react";
 import { MdCheckCircle } from "react-icons/md";

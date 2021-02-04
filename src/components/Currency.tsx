@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
-import { Container, SimpleGrid, GridItem  } from '@chakra-ui/layout';
+import { Container, SimpleGrid  } from '@chakra-ui/layout';
 import { Text } from "@chakra-ui/react";
 import { CurrencyDecorIcon } from '../../public/images/icons/icons'
 import CSS from 'csstype';

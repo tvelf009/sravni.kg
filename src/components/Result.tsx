@@ -1,5 +1,5 @@
 
-import { Box, Button, Grid, GridItem,  List, ListItem, ListIcon, SimpleGrid  } from '@chakra-ui/react';
+import { Box, Button, GridItem,  List, ListItem, ListIcon, SimpleGrid  } from '@chakra-ui/react';
 import { Center } from '@chakra-ui/layout';
 import { Text } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react"
