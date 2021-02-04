@@ -39,7 +39,7 @@ const components = {
           background: "#FFF",
           color: "#000",
           fontWeight: 500,
-          fontSize: "0.9rem",
+          fontSize: "1.5vmin",
           borderRadius: "2px",
           w: "50px",
           _selected: {

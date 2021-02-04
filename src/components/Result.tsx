@@ -1,5 +1,5 @@
 
-import { Box, Button, Grid, GridItem,  List, ListItem, ListIcon } from '@chakra-ui/react';
+import { Box, Button, Grid, GridItem,  List, ListItem, ListIcon, SimpleGrid  } from '@chakra-ui/react';
 import { Center } from '@chakra-ui/layout';
 import { Text } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react"
@@ -44,7 +44,7 @@ export const Result = ({data, bgcolorid, currency, searchCondition}:{data:Credit
 
     return (
         <Box bg={bgcolorid % 2 === 0 ? "#FFF" : "#F4F5F5"} mt={2} border="1px" borderColor="#E6EAF0">
-            <Grid templateColumns="repeat(12, 1fr)" gap={10} mt={2}>
+            <SimpleGrid  columns={[1, null, 12]} gap={10} mt={2}>
                 <GridItem  pt={10} pb={10} pl={2} pr={2} colSpan={3}>
                     <Center>
                         <Image src={"https://sravni.kg/images/logo/" + credit.partner.logo} alt={credit.partner.name} h={41}/>    
@@ -124,7 +124,7 @@ export const Result = ({data, bgcolorid, currency, searchCondition}:{data:Credit
                         
                     </Button>
                 </GridItem>
-            </Grid>
+            </SimpleGrid>
         </Box>
     )
 }

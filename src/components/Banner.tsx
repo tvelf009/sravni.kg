@@ -12,17 +12,17 @@ export const Banner = () => {
 
 
     return (
-        <Box h="433px" bg="#F6F6F6" boxShadow="base">
+        <Box  bg="#F6F6F6" boxShadow="base">
             <Container maxWidth="xl">
-            <Grid templateColumns="repeat(5, 1fr)" gap={4}>
-                <GridItem colSpan={3} >
+            <Grid templateColumns="repeat(12, 1fr)" gap={4}>
+                <GridItem colSpan={8} >
                     <Text fontSize="4xl" mt="70px">ПОМОЩНИК ПРИ ВЫБОРЕ КРЕДИТА</Text>
                     <Text fontSize="2xl" mt="30px">Сравни условия кредитования банков и других финансово-кредитных учреждений Кыргызстана!</Text>
                     <Link href="#search">
-                        <Button variant="cus-call" mt="60px">ПОДОБРАТЬ КРЕДИТ</Button>
+                        <Button variant="cus-call" mt="60px" mb={5}>ПОДОБРАТЬ КРЕДИТ</Button>
                     </Link>
                 </GridItem>
-                <GridItem colStart={4} colEnd={6} h="10" >
+                <GridItem colSpan={4}  >
                     <Image src="/images/web/banner.png"/>
                 </GridItem>
             </Grid>

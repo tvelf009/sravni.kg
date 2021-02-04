@@ -23,7 +23,7 @@ export const Category = ({potreb, auto, business, education}:{potreb:BestOffers[
 
                 <TabPanels>
                     <TabPanel>
-                        <SimpleGrid columns={4} spacingX="40px" spacingY="20px" mt={10}>
+                        <SimpleGrid columns={[1, null, 4]} mt={10} spacing={5}>
                             {
                                 potreb.map((item, index) => (
                                     <Box key={index}>
@@ -34,7 +34,7 @@ export const Category = ({potreb, auto, business, education}:{potreb:BestOffers[
                         </SimpleGrid>
                     </TabPanel>
                     <TabPanel>
-                        <SimpleGrid columns={4} spacingX="40px" spacingY="20px" mt={10}>
+                        <SimpleGrid columns={[1, null, 4]} mt={10} spacing={5}>
                             {
                                 auto.map((item, index) => (
                                     <Box key={index}>
@@ -45,7 +45,7 @@ export const Category = ({potreb, auto, business, education}:{potreb:BestOffers[
                         </SimpleGrid>
                     </TabPanel>
                     <TabPanel>
-                        <SimpleGrid columns={4} spacingX="40px" spacingY="20px" mt={10}>
+                        <SimpleGrid columns={[1, null, 4]} mt={10} spacing={5}>
                             {
                                 business.map((item, index) => (
                                     <Box key={index}>
@@ -56,7 +56,7 @@ export const Category = ({potreb, auto, business, education}:{potreb:BestOffers[
                         </SimpleGrid>
                     </TabPanel>
                     <TabPanel>
-                        <SimpleGrid columns={4} spacingX="40px" spacingY="20px" mt={10}>
+                        <SimpleGrid columns={[1, null, 4]} mt={10} spacing={5}>
                             {
                                 education.map((item, index) => (
                                     <Box key={index}>

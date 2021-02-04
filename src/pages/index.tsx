@@ -10,6 +10,7 @@ import { Footer } from '../components/Footer';
 import { Partners } from '../components/Partners';
 import SearchAPI from '../../lib/api/search';
 import { Category } from '../components/Category';
+import { Box } from '@chakra-ui/react';
 
 
 
@@ -19,18 +20,21 @@ const Index = ({currencyData, partnersData, potreb, auto, business, education}: 
       <Head>
         <title>Sravni.KG | Ваш помощник при выборе кредита</title>
       </Head>
-      <TopHeader/>
-      <Header/>
-      <Banner/>
-      <Currency data={currencyData} />
-      <Purposes />
-      <CreditSearch/>
-      <Partners partners={partnersData}/>
-      <Category potreb={potreb} auto={auto} business={business} education={education} />
-      <Main>
+      <Box minW="704px">
+        <TopHeader/>
+        <Header/>
+        <Banner/>
+        <Currency data={currencyData} />
+        <Purposes />
+        <CreditSearch/>
+        <Partners partners={partnersData}/>
+        <Category potreb={potreb} auto={auto} business={business} education={education} />
+        <Main>
 
-      </Main>
-      <Footer/>
+        </Main>
+        <Footer/>
+      </Box>
+
     </>
 );
 

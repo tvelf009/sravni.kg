@@ -1,4 +1,4 @@
-import { Box, Container, Text, Grid, GridItem, Center } from '@chakra-ui/react';
+import { Box, Container, Text, Grid, GridItem, Center, SimpleGrid } from '@chakra-ui/react';
 import React from 'react';
 import { PayDetail } from '../interfaces/interface';
 import { CurrencyDecorIcon, CheckIcon } from '../../public/images/icons/icons';
@@ -44,7 +44,7 @@ export const Calculate = ({data, condition}:{data:PayDetail[], condition:any}) =
                     Таблица расчета кредита
                 </Text>
                 <CurrencyDecorIcon/>
-                <Grid templateColumns="repeat(12, 1fr)" mt={5} gap={10}>
+                <SimpleGrid columns={[2, null, 12]} mt={5} gap={10}>
                     <GridItem colSpan={9} pt={5}>
                         <Grid templateColumns="repeat(12, 1fr)" gap={6}>
                             <GridItem colSpan={2}>
@@ -135,7 +135,7 @@ export const Calculate = ({data, condition}:{data:PayDetail[], condition:any}) =
                             </Text>
                         </Box>
                     </GridItem>
-                </Grid>
+                </SimpleGrid>
             </Container>
         </Box>
     )

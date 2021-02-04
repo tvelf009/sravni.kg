@@ -10,6 +10,7 @@ import { CrAbout } from '../../components/CrAbout';
 import { ParsedUrlQuery } from 'querystring';
 import { Appointment } from '../../components/Appointment';
 import { Calculate } from '../../components/Calculate';
+import { Box } from '@chakra-ui/react';
 
 
 
@@ -31,32 +32,35 @@ const CreditPage = () => {
       <Head>
         <title>Sravni.KG | Кредиты для счастья</title>
       </Head>
-      <TopHeader/>
-      <Header/>
-      <BreadcrumbCmpnt/>
-      {
-        data != null? (
-          <>
-            <CrAbout data={data} condition={condition} />
-            <Appointment data={data}/>
-          </>
-        )
+      <Box minWidth="704px">
+        <TopHeader/>
+        <Header/>
+        <BreadcrumbCmpnt/>
+        {
+          data != null? (
+            <>
+              <CrAbout data={data} condition={condition} />
+              <Appointment data={data}/>
+            </>
+          )
+          
+          : (
+            <h1>Загрузка</h1>
+          )
+        }
         
-        : (
-          <h1>Загрузка</h1>
-        )
-      }
-      
-      {
-        payDetail != null? (
-          <Calculate data={payDetail.data} condition={condition.rate}/>
-        ):(
-          <h1>Загрузка</h1>
-        )
-      }
-      
+        {
+          payDetail != null? (
+            <Calculate data={payDetail.data} condition={condition.rate}/>
+          ):(
+            <h1>Загрузка</h1>
+          )
+        }
+        
 
-      <Footer/>
+        <Footer/>
+      </Box>
+
     </>
   )
 

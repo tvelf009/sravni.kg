@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
-import { Container, Grid, GridItem  } from '@chakra-ui/layout';
+import { Container, SimpleGrid, GridItem  } from '@chakra-ui/layout';
 import { Text } from "@chakra-ui/react";
 import { CurrencyDecorIcon } from '../../public/images/icons/icons'
 import CSS from 'csstype';
@@ -22,18 +22,18 @@ export const Currency = ({data}: {data:Currencies[]}) => {
           <Container  maxWidth="xl">
             <Text fontSize="4xl">Курсы валют</Text>
             <CurrencyDecorIcon/>
-            <Grid templateColumns="repeat(5, 1fr)" gap={6} mt={3}>
+            <SimpleGrid columns={[2, null, 4]} gap={6} mt={3}>
                 {
                     data.map((item, index) => (
-                        <GridItem rowSpan={2} colSpan={1} key={index}>
+                        <Box rowSpan={2} colSpan={1} key={index}>
                             <Text>
                                 {item.currency + " " + item.value} сом
                             </Text>
-                        </GridItem>
+                        </Box>
                     ))
                 }
 
-            </Grid>
+            </SimpleGrid>
             <Text style={fontStyle1} mt={2}>
                 Официальные курсы валют Национального банка Кыргызстана.
             </Text>

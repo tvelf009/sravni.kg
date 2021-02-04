@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem } from '@chakra-ui/react';
+import { Box, Grid, GridItem, SimpleGrid  } from '@chakra-ui/react';
 import { Container } from '@chakra-ui/layout';
 import { Text } from "@chakra-ui/react";
 import React from 'react';
@@ -44,11 +44,11 @@ export const Purposes = () => {
     
 
     return (
-        <Box h="403px" bg="#F4F5F5" boxShadow="base">
-            <Container maxWidth="xl" pt={10}>
-                <Grid templateColumns="repeat(3, 1fr)" gap={3}> 
+        <Box bg="#F4F5F5" boxShadow="base">
+            <Container maxWidth="xl" pt={10} pb={10}>
+                <SimpleGrid  columns={[1, null, 3]} gap={10}> 
                 {json?.map((item:any, index) => (
-                    <GridItem rowSpan={2} colSpan={1} w="358px" h="153px" bg="white" key={index} >
+                    <GridItem rowSpan={2} colSpan={1}  bg="white" key={index} >
                         <Grid
                             w="100%" h="100%"
                             templateRows="repeat(2, 1fr)"
@@ -71,7 +71,7 @@ export const Purposes = () => {
                             </Grid>
                     </GridItem>
                 ))}
-                </Grid>
+                </SimpleGrid>
             </Container>
         </Box>
     )

@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, ListItem, ListIcon } from '@chakra-ui/react';
+import { Box, Grid, GridItem, ListItem, ListIcon, SimpleGrid } from '@chakra-ui/react';
 import { Container } from '@chakra-ui/layout';
 import { Text } from "@chakra-ui/react";
 import { MdCheckCircle } from "react-icons/md";
@@ -52,7 +52,7 @@ export const Appointment = ({data}:{data:Credits}) => {
                 </Text>
                 {
                     data.condition.generalLimits.map((item, index) => (
-                        <Grid templateColumns="repeat(24, 1fr)" gap={4} key={index} mb={8}>
+                        <SimpleGrid columns={[12, null, 24]} gap={4} key={index} mb={8}>
                             <GridItem colSpan={1}>
                                 {
                                     item.currency.code === "KGS" ? <SomIcon/> : <UsdIcon/>
@@ -90,10 +90,10 @@ export const Appointment = ({data}:{data:Credits}) => {
                                     от {data.requirement.ageLimit.min} лет до {data.requirement.ageLimit.max} лет.
                                 </Text>
                             </GridItem>
-                        </Grid>
+                        </SimpleGrid>
                     ))
                 }
-                <Grid templateColumns="repeat(12, 1fr)" gap={6}>
+                <SimpleGrid columns={[2, null, 12]}  gap={6}>
                     <GridItem colSpan={6}>
                         <Text style={fontStyle2} mb={5}>
                             Необходимые документы
@@ -139,7 +139,7 @@ export const Appointment = ({data}:{data:Credits}) => {
                             ))
                         }
                     </GridItem>
-                </Grid>
+                </SimpleGrid>
             </Container>
 
         </Box>

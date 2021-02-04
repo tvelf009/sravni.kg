@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Image } from '@chakra-ui/react';
+import { Box, Button, Grid, Image, SimpleGrid } from '@chakra-ui/react';
 import { Container, GridItem, Text } from '@chakra-ui/layout';
 import React from 'react';
 import { CurrencyDecorIcon } from '../../public/images/icons/icons';
@@ -63,7 +63,7 @@ export const CrAbout = ({data, condition}:{data:Credits, condition:any}) => {
                     О Банке
                 </Text>
                 <CurrencyDecorIcon/>
-                <Grid templateColumns="repeat(12, 1fr)" gap={6}>
+                <SimpleGrid columns={[1, null, 12]} gap={6}>
                     <GridItem colSpan={4} >
                         <Image src={"https://sravni.kg/images/logo/"+ data.partner.logo} />
                     </GridItem>
@@ -83,7 +83,7 @@ export const CrAbout = ({data, condition}:{data:Credits, condition:any}) => {
                         </a>
 
                     </GridItem>
-                </Grid>
+                </SimpleGrid>
             </Container>
         </Box>
     )
