@@ -17,6 +17,10 @@ const SearchAPI = {
         axios.get(`${SERVER_BASE_URL}/products/credits/top?purpose=3`),
     offersEduc: () =>
         axios.get(`${SERVER_BASE_URL}/products/credits/top?purpose=6`),
+    getPartnerById: (partnerId:number) =>
+        axios.get(`${SERVER_BASE_URL}/partners/${partnerId}`),
+    getPartnerCredits: (partnerId:number) =>
+        axios.get(`${SERVER_BASE_URL}/products/credits/bank/${partnerId}`),
 }
 
 

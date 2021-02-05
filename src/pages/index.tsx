@@ -48,8 +48,7 @@ export async function getStaticProps() {
   const business = await SearchAPI.offersBusiness();
   const education = await SearchAPI.offersEduc();
 
-  console.log(currency);
-  
+ 
   return{
     props:{
       partnersData: partners.data,

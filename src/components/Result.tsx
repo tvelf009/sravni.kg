@@ -41,6 +41,8 @@ export const Result = ({data, bgcolorid, currency, searchCondition}:{data:Credit
 
     const [credit] = React.useState(data);
 
+    console.log(currency);
+    
 
     return (
         <Box bg={bgcolorid % 2 === 0 ? "#FFF" : "#F4F5F5"} mt={2} border="1px" borderColor="#E6EAF0">
@@ -81,13 +83,13 @@ export const Result = ({data, bgcolorid, currency, searchCondition}:{data:Credit
                         Ежемесячные выплаты
                     </Text>
                     <Text style={fontStyle3}>
-                        ~ <NumberFormat value={credit.payment.monthlyPayment} displayType={'text'} thousandSeparator={' '} />{currency === 1 ? " с/мес" : " $/мес"}
+                        ~ <NumberFormat value={credit.payment.monthlyPayment} displayType={'text'} thousandSeparator={' '} />{currency != 2 ? " с/мес" : " $/мес"}
                     </Text>
                     <Text style={fontStyle2} mt={1}>
                         Итого сумма процентов
                     </Text>
                     <Text style={fontStyle4}>
-                        ~ <NumberFormat value={parseFloat(credit.payment.percentPayment).toFixed(2)} displayType={'text'} thousandSeparator={' '} />{currency === 1 ? " сом" : " $"}
+                        ~ <NumberFormat value={parseFloat(credit.payment.percentPayment).toFixed(2)} displayType={'text'} thousandSeparator={' '} />{currency != 2 ? " сом" : " $"}
                     </Text>
                 </GridItem>
                 <GridItem  colSpan={3} >

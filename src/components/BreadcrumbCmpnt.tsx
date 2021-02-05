@@ -11,11 +11,11 @@ export const BreadcrumbCmpnt = () => {
             <Container maxWidth="xl">
             <Breadcrumb>
                 <BreadcrumbItem>
-                    <BreadcrumbLink href="#">Главная</BreadcrumbLink>
+                    <BreadcrumbLink href="/">Главная</BreadcrumbLink>
                 </BreadcrumbItem>
 
                 <BreadcrumbItem>
-                    <BreadcrumbLink href="#">Подобор кредита</BreadcrumbLink>
+                    <BreadcrumbLink href="#">Подбор кредита</BreadcrumbLink>
                 </BreadcrumbItem>
 
                 <BreadcrumbItem isCurrentPage>

@@ -185,12 +185,16 @@ export const CreditSearch = () => {
         setShow(true)
         const {data} = await SearchAPI.getCredits(amount, term,purpose, currency);
 
+        
+        
         setSearchCondition({
             amount: amount,
             purposeId: purpose,
             currency: currency,
             term: term
         })
+
+        console.log(searchCondition);
         
         setCredit([]);
         setCredit(data);

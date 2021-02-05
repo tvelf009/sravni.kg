@@ -15,6 +15,7 @@ import { Box } from '@chakra-ui/react';
 
 
 
+
 const CreditPage = () => {
 
   const router = useRouter();
@@ -23,14 +24,15 @@ const CreditPage = () => {
 
   const {data} = useSWR("https://sravni.kg:9090/api/v1/products/credits/" + condition.id, fetcher);
   const payDetail = useSWR("https://sravni.kg:9090/api/v1/payments?amount=" + condition.amount + "&term=" + condition.term + "&rate=" + condition.rate + "&type=annuity", fetcher);
-
-  console.log(payDetail);
   
   return (
     <>
 
       <Head>
-        <title>Sravni.KG | Кредиты для счастья</title>
+        {
+          data != null? <title>Sravni.KG | {data.partner.name + " " + data.title}</title> : <title>Sravni.KG | Ваш помощник при выборе кредита</title>
+        }
+        
       </Head>
       <Box minWidth="704px">
         <TopHeader/>

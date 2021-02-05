@@ -52,6 +52,16 @@ export const CurrencyDecorIcon = (props:any) => (
   </Icon>
 )
 
+export const CurrencyDecorIconStyle2 = (props:any) => (
+  <Icon width="60" viewBox="0 0 140 6" {...props}>
+    <rect
+      width="140" 
+      height="2" 
+      fill="#28467F"
+    />
+  </Icon>
+)
+
 export const LogoWhite = (props:any) => (
   <Icon w={249} h={39} viewBox="0 0 249 39" {...props}>
     <path

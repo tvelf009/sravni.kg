@@ -3,6 +3,7 @@ import { CurrencyDecorIcon } from '../../public/images/icons/icons';
 import React from 'react';
 import ItemsCarousel from 'react-items-carousel';
 import { ArrowLeftIcon, ArrowRightIcon } from '@chakra-ui/icons';
+import Link from 'next/link';
  
 
 export const Partners = ({partners}:{partners:any[]}) => {
@@ -28,7 +29,10 @@ export const Partners = ({partners}:{partners:any[]}) => {
                         {
                             partners.map((item, index) => (
                                 <div key={index} style={{width: "20vw"}}>
-                                    <Image src={"https://sravni.kg/images/logo/"+item.logo} />
+                                    <Link href={"/partner/" + item.id}>
+                                        <Image src={"https://sravni.kg/images/logo/"+item.logo} />
+                                    </Link>
+                                    
                                 </div>
                             ))
                         }
