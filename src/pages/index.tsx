@@ -11,6 +11,7 @@ import { Partners } from '../components/Partners';
 import SearchAPI from '../../lib/api/search';
 import { Category } from '../components/Category';
 import { Box } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 
 
 
@@ -20,10 +21,10 @@ const Index = ({currencyData, partnersData, potreb, auto, business, education}: 
       <Head>
         <meta charSet="utf-8" />
         <title>Sravni.KG | Кредиты в Кыргызстане</title>
-        <meta property="og:title" content="Кредиты в Кыргызстане" key="title" />
-        <meta property="og:description" content="Персональный подбор кредита, подробная информация по условиям кредитования, расчёт примерного графика погашения, онлайн заявка на кредит" key="ogdesc" />
-        <meta property="og:site_name" content="Sravni.kg" key="ogsitename" />
-        <meta property="og:url" content="https://sravni.kg" />
+        <NextSeo
+          title="Кредиты в Кыргызстане"
+          description="Персональный подбор кредита, подробная информация по условиям кредитования, расчёт примерного графика погашения, онлайн заявка на кредит"
+        />
       </Head>
       <Box minW="704px">
         <TopHeader/>
