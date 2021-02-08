@@ -31,8 +31,7 @@ const CreditPage = () => {
       <Head>
         {
           data != null? <title>Sravni.KG | {data.partner.name + " " + data.title}</title> : <title>Sravni.KG | Ваш помощник при выборе кредита</title>
-        }
-        
+        }        
       </Head>
       <Box minWidth="704px">
         <TopHeader/>

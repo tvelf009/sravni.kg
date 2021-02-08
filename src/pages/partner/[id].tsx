@@ -18,9 +18,26 @@ const Partner = ({partnerData, banksCreditsList}:{partnerData:any, banksCreditsL
     return (
         <>
 
-        <Head>
-            <title>Sravni.KG | Ваш помощник при выборе кредита</title>
-        </Head>
+        
+            {
+                partnerData != null? (
+                    <Head>
+                        <title>Sravni.KG | Кредиты от {partnerData.name}</title>
+                        <meta property="og:title" content={"Кредиты от " + partnerData.name} key="title" />
+                        <meta property="og:description" content={"Персональный подбор кредитов от " + partnerData.name + ", подробная информация по условиям кредитования, расчёт примерного графика погашения, онлайн заявка на кредит"} key="ogdesc" />
+                        <meta property="og:site_name" content="Sravni.kg" key="ogsitename" />
+                    </Head>
+                    
+                ) : (
+                    <Head>
+                        <title>Sravni.KG | Ваш помощник при выборе кредита</title>
+                    </Head>
+                )
+            }
+
+        
+
+
         <Box minWidth="704px">
             <TopHeader/>
             <Header/>
@@ -53,9 +70,6 @@ const Partner = ({partnerData, banksCreditsList}:{partnerData:any, banksCreditsL
 export async function getStaticPaths() {
 
     const {data}:{data:any[]} = await SearchAPI.partners();
-
-    console.log(data);
-    
 
     const paths = data.map((item:any) => (
         {

@@ -18,7 +18,11 @@ const Index = ({currencyData, partnersData, potreb, auto, business, education}: 
 
     <>
       <Head>
-        <title>Sravni.KG | Ваш помощник при выборе кредита</title>
+        <meta charSet="utf-8" />
+        <title>Sravni.KG | Кредиты в Кыргызстане</title>
+        <meta property="og:title" content="Кредиты в Кыргызстане" key="title" />
+        <meta property="og:description" content="Персональный подбор кредита, подробная информация по условиям кредитования, расчёт примерного графика погашения, онлайн заявка на кредит" key="ogdesc" />
+        <meta property="og:site_name" content="Sravni.kg" key="ogsitename" />
       </Head>
       <Box minW="704px">
         <TopHeader/>
