@@ -24,6 +24,7 @@ const Partner = ({partnerData, banksCreditsList}:{partnerData:any, banksCreditsL
                         <NextSeo
                             title={"Кредиты от " + partnerData.name}
                             description={"Персональный подбор кредитов от " + partnerData.name + ". Подробная информация по условиям кредитования, расчёт примерного графика погашения"}
+                            openGraph={{}}
                         />
                         <Head>
                             <title>Sravni.KG | Кредиты от {partnerData.name}</title>

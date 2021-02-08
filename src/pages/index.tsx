@@ -18,15 +18,14 @@ import { NextSeo } from 'next-seo';
 const Index = ({currencyData, partnersData, potreb, auto, business, education}: any) => (
 
     <>
-
       <NextSeo
-          title = 'Кредиты в Кыргызстане'
-          titleTemplate = 'Sravni.kg | %s'
-          defaultTitle='Sravni.kg'
-          description="Персональный подбор кредита, подробная информация по условиям кредитования, расчёт примерного графика погашения!"
-        />
+        title="Sravni.kg | Кредиты в Кыргызстанe"
+        description="Используйте сервис для быстрого поиска кредитов в Кыргызстане онлайн."
+        openGraph={{}}
+       />
       <Head>
         <meta charSet="utf-8" />
+        
         <title>Sravni.KG | Кредиты в Кыргызстане</title>
       </Head>
 
