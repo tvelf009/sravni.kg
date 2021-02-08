@@ -27,6 +27,10 @@ export default class Document extends NextDocument {
               }}
             />
           </>
+          <meta property="og:title" content="Кредиты в Кыргызстане" key="title" />
+          <meta property="og:description" content="Персональный подбор кредита, подробная информация по условиям кредитования, расчёт примерного графика погашения, онлайн заявка на кредит" key="ogdesc" />
+          <meta property="og:site_name" content="Sravni.kg" key="ogsitename" />
+          <meta property="og:url" content="https://sravni.kg" />
         </Head>
         <body>
           {/* Make Color mode to persists when you refresh the page. */}
