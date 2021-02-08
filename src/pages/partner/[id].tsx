@@ -24,8 +24,8 @@ const Partner = ({partnerData, banksCreditsList}:{partnerData:any, banksCreditsL
                     <Head>
                         <title>Sravni.KG | Кредиты от {partnerData.name}</title>
                         <meta property="og:title" content={"Кредиты от " + partnerData.name} key="title" />
-                        <meta property="og:description" content={"Персональный подбор кредитов от " + partnerData.name + ", подробная информация по условиям кредитования, расчёт примерного графика погашения, онлайн заявка на кредит"} key="ogdesc" />
-                        <meta property="og:site_name" content="Sravni.kg" key="ogsitename" />
+                        <meta property="og:description" content={"Персональный подбор кредитов от " + partnerData.name + ", подробная информация по условиям кредитования, расчёт примерного графика погашения, онлайн заявка на кредит"} key="desc" />
+                        <meta property="og:site_name" content="sravni.kg" key="sitename" />
                     </Head>
                     
                 ) : (
