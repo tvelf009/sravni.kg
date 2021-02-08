@@ -203,7 +203,7 @@ export const CreditSearch = () => {
     return (
         <Box  bg="#FFF" boxShadow="base" pb={5} id="search">
             <Container maxWidth="xl" pt={5} pb={5}>
-                <Text fontSize="4xl" fontWeight="500" as="h1">Подбор кредита онлайн</Text>
+                <Text fontSize="4xl" fontWeight="500"  as="h1">Подбор кредита онлайн</Text>
                 <CurrencyDecorIcon/>
 
                 <Grid templateColumns="repeat(2, 1fr)" gap={10} mt={10}>
