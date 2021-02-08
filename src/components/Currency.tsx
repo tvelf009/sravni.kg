@@ -20,7 +20,7 @@ export const Currency = ({data}: {data:Currencies[]}) => {
     return (
         <Box  bg="#FFF" boxShadow="base" pt={5} pb={5}>
           <Container  maxWidth="xl">
-            <Text fontSize="4xl">Курсы валют</Text>
+            <Text fontSize="4xl" as="h2">Курсы валют</Text>
             <CurrencyDecorIcon/>
             <SimpleGrid columns={[2, null, 4]} gap={6} mt={3}>
                 {

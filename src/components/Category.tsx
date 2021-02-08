@@ -11,7 +11,7 @@ export const Category = ({potreb, auto, business, education}:{potreb:BestOffers[
     return (
         <Box boxShadow="base">
             <Container  maxWidth="xl" mt={5}>
-                <Text fontSize="4xl" fontWeight="500">Лучшие предложения</Text>
+                <Text fontSize="4xl" fontWeight="500" as="h3">Лучшие предложения</Text>
                 <CurrencyDecorIcon/>
                 <Tabs mt={10} variant="cus-tabs-block" isFitted >
                 <TabList>

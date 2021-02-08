@@ -16,8 +16,8 @@ export const Banner = () => {
             <Container maxWidth="xl">
             <Grid templateColumns="repeat(12, 1fr)" gap={4}>
                 <GridItem colSpan={8} >
-                    <Text fontSize="4xl" mt="70px">ПОМОЩНИК ПРИ ВЫБОРЕ КРЕДИТА</Text>
-                    <Text fontSize="2xl" mt="30px">Сравни условия кредитования банков и других финансово-кредитных учреждений Кыргызстана!</Text>
+                    <Text fontSize="4xl" mt="70px" as="h1">ПОМОЩНИК ПРИ ВЫБОРЕ КРЕДИТА</Text>
+                    <Text fontSize="2xl" mt="30px" as="h2">Сравни условия кредитования банков и других финансово-кредитных учреждений Кыргызстана!</Text>
                     <Link href="#search">
                         <Button variant="cus-call" mt="60px" mb={5}>ПОДОБРАТЬ КРЕДИТ</Button>
                     </Link>
