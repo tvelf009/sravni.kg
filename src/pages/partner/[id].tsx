@@ -8,6 +8,7 @@ import { BankTitle } from "../../components/BankTitle";
 import { BankCredits } from "../../components/BankCredits";
 import { Credits } from "../../interfaces/interface";
 import { Footer } from '../../components/Footer';
+import { NextSeo } from 'next-seo';
 
 
 
@@ -17,17 +18,17 @@ const Partner = ({partnerData, banksCreditsList}:{partnerData:any, banksCreditsL
     
     return (
         <>
-
-        
             {
                 partnerData != null? (
-                    <Head>
-                        <title>Sravni.KG | Кредиты от {partnerData.name}</title>
-                        <meta property="og:title" content={"Кредиты от " + partnerData.name} key="title" />
-                        <meta property="og:description" content={"Персональный подбор кредитов от " + partnerData.name + ", подробная информация по условиям кредитования, расчёт примерного графика погашения, онлайн заявка на кредит"} key="desc" />
-                        <meta property="og:site_name" content="sravni.kg" key="sitename" />
-                    </Head>
-                    
+                    <>
+                        <NextSeo
+                            title={"Кредиты от " + partnerData.name}
+                            description={"Персональный подбор кредитов от " + partnerData.name + ". Подробная информация по условиям кредитования, расчёт примерного графика погашения"}
+                        />
+                        <Head>
+                            <title>Sravni.KG | Кредиты от {partnerData.name}</title>
+                        </Head>
+                    </>
                 ) : (
                     <Head>
                         <title>Sravni.KG | Ваш помощник при выборе кредита</title>
