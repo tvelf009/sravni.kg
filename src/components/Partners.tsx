@@ -13,7 +13,7 @@ export const Partners = ({partners}:{partners:any[]}) => {
     return (
         <Box bg="#F6F6F6" boxShadow="base" pb={8} pt={5}>
             <Container  maxWidth="xl">
-                <Text fontSize="4xl" fontWeight="500" as="h1">Доступен поиск по следующим банкам</Text>
+                <Text fontSize="4xl" fontWeight="500" as="h2">Доступен поиск по следующим банкам</Text>
                 <CurrencyDecorIcon/>
                 <Box mt={10}>
                     <ItemsCarousel

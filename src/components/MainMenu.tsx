@@ -50,6 +50,7 @@ export const MainMenu = () => {
                     </MenuButton>
                 </Menu>
                 <Menu>
+                <Link href="/about">
                     <MenuButton
                         as={Button}
                         leftIcon={<PhoneIcon/>}
@@ -57,6 +58,7 @@ export const MainMenu = () => {
                         >
                             Связаться с нами
                     </MenuButton>
+                    </Link>
                 </Menu>
             </Box>
             <Box display={{base: "block",  sm: "block", md: "none"}}>
@@ -71,7 +73,9 @@ export const MainMenu = () => {
                         <MenuItem>Главная</MenuItem>
                         <MenuItem>Кредиты</MenuItem>
                         <MenuItem>Статьи</MenuItem>
-                        <MenuItem>Связаться с нами</MenuItem>
+                        <Link href="/about">
+                            <MenuItem>Связаться с нами</MenuItem>
+                        </Link>
                     </MenuList>
                 </Menu>
             </Box>

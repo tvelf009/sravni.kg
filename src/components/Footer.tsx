@@ -4,6 +4,7 @@ import { LogoWhite } from '../../public/images/icons/icons';
 import CSS from 'csstype';
 import { CurrencyDecorIcon } from '../../public/images/icons/icons';
 
+
 const fontStyle1:CSS.Properties = {
   fontWeight: 500,
   fontSize: "20px",
@@ -21,12 +22,17 @@ const fontStyle3:CSS.Properties = {
   fontSize: "16px"
 }
 
+const boxStyle1:CSS.Properties = {
+  bottom: "0",
+  width: "100%"
+}
+
 
 export const Footer = () => {
 
 
     return (
-        <Box bg="#292832" boxShadow="base" pt={10} >
+        <Box bg="#292832" boxShadow="base" pt={10} style={boxStyle1}>
           <Container maxWidth="xl">
             <SimpleGrid columns={4} spacing={10}>
               <Box >
