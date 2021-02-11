@@ -29,22 +29,7 @@ export const authenticate = (data, next) => {
 export const isAuth = () => {
     if (process.browser) {
         const cookieChecked = getCookie('token')
-        if (cookieChecked) {
-            if (localStorage.getItem('user')) {
-                return JSON.parse(localStorage.getItem('user'));
-            } else {
-                return false;
-            }
-        }
+        if (cookieChecked) return true;
     }
 }
 
-
-export function verifyToken(jwtToken) {
-    try{
-        return jwt.verify(jwtToken, SECRET_KEY);
-    } catch (e) {
-        console.log('e:', e);
-        return null;
-    }
-}
