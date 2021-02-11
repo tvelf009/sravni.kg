@@ -1,17 +1,42 @@
 import React, {useState} from 'react';
 import Head from "next/head";
 import {TopHeader} from "../../components/TopHeader";
-import {Box, Container, Flex, Input, Heading, Button, FormControl, FormLabel} from "@chakra-ui/react";
+import {Box, Container, Flex, Input, Heading, Button, FormControl, FormLabel, Alert, AlertIcon} from "@chakra-ui/react";
+import SearchAPI from "../../../lib/api/search";
+import Router from 'next/router';
+import {authenticate} from '../../middleware/utils';
 
 
 const SignIn = () => {
-    const [login, setLogin] = useState('');
-    const [password, setPassword] = useState('');
 
-    const handleSubmit = (e: any) => {
+    const [values, setValues] = useState({
+        username: '',
+        password: '',
+        error: null,
+        loading: false,
+        message: '',
+    });
+
+    const {username, password, error, loading, message} = values;
+
+    const handleChange = (name: string ) => (e: any) => {
+            setValues({...values, [name]: e.target.value});
+    }
+
+    const handleSubmit = async (e: any) => {
         e.preventDefault();
-        alert(`Email: ${login} & Password: ${password}`);
+        setValues({...values, loading: true});
 
+        const {data} = await SearchAPI.signIn({username, password});
+
+        if (data.error) {
+            setValues({ ...values, loading: false, error: data.error, message: data.message });
+        } else {
+            authenticate(data, () => {
+                Router.push('/');
+            })
+            setValues({...values, loading: false});
+        }
     };
 
     return (
@@ -20,23 +45,29 @@ const SignIn = () => {
                 <title>Sravni.KG | О Нас</title>
             </Head>
             <TopHeader/>
-            <Box minWidth="704px" mt={15}>
+            <Box minWidth="704px" mt={130}>
                 <Container maxWidth="xl" centerContent>
 
                     <Flex width="full" align="center" justifyContent="center">
-                        <Box p={2}>
+                        <Box p={3}>
+                            {error && <Alert status="error"> <AlertIcon />
+                                        {error}
+                                     </Alert>
+                            }
+
                             <Box textAlign="center">
                                 <Heading>Вход</Heading>
                             </Box>
                             <Box my={4} textAlign="left">
                                 <form onSubmit={handleSubmit}>
                                     <FormControl isRequired>
-                                        <FormLabel>Логин</FormLabel>
+                                        <FormLabel>Имя пользователя</FormLabel>
                                         <Input
                                             type="text"
                                             placeholder="test@test.com"
                                             size="lg"
-                                            onChange={e => setLogin(e.currentTarget.value)}
+                                            value={username}
+                                            onChange={handleChange('username')}
                                         />
                                     </FormControl>
                                     <FormControl mt={4} isRequired>
@@ -45,10 +76,13 @@ const SignIn = () => {
                                             type="password"
                                             placeholder="*******"
                                             size="lg"
-                                            onChange={e => setPassword(e.currentTarget.value)}
+                                            value={password}
+                                            onChange={handleChange('password')}
                                         />
                                     </FormControl>
                                     <Button
+                                        isLoading={loading}
+                                        loadingText="Отправка"
                                         colorScheme="teal"
                                         variant="solid"
                                         width="full"
@@ -56,7 +90,7 @@ const SignIn = () => {
                                         size="lg"
                                         type="submit"
                                     >
-                                        Sign In
+                                        Войти
                                     </Button>
                                 </form>
                             </Box>
@@ -65,7 +99,7 @@ const SignIn = () => {
                 </Container>
             </Box>
         </>
-)
+    )
 }
 
 export default SignIn;

@@ -21,6 +21,8 @@ const SearchAPI = {
         axios.get(`${SERVER_BASE_URL}/partners/${partnerId}`),
     getPartnerCredits: (partnerId:number) =>
         axios.get(`${SERVER_BASE_URL}/products/credits/bank/${partnerId}`),
+    signIn: (data:object) =>
+        axios.post(`${SERVER_BASE_URL}/auth/login`, {...data}),
 }
 
 
