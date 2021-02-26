@@ -27,13 +27,21 @@ const Partner = ({partnerData, banksCreditsList}:{partnerData:any, banksCreditsL
                             openGraph={{}}
                         />
                         <Head>
-                            <title>Sravni.KG | Кредиты от {partnerData.name}</title>
+                            <title>Кредиты от {partnerData.name}</title>
                         </Head>
                     </>
                 ) : (
+                    <>
+                        <NextSeo
+                            title={"Кредиты от " + partnerData.name}
+                            description={"Персональный подбор кредитов от " + partnerData.name + ". Подробная информация по условиям кредитования, расчёт примерного графика погашения"}
+                            openGraph={{}}
+                        />
                     <Head>
-                        <title>Sravni.KG | Ваш помощник при выборе кредита</title>
+                        <title>Список кредитов</title>
                     </Head>
+                    </>
+
                 )
             }
 

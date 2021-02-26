@@ -19,14 +19,14 @@ const Index = ({currencyData, partnersData, potreb, auto, business, education}: 
 
     <>
       <NextSeo
-        title="Sravni.kg | Кредиты в Кыргызстанe"
+        title="Кредиты в Кыргызстанe"
         description="Используйте сервис для быстрого поиска кредитов в Кыргызстане онлайн. Персональный подбор кредита, подробная информация по условиям кредитования, расчёт примерного графика погашения." 
         openGraph={{}}
        />
       <Head>
         <meta charSet="utf-8" />
         
-        <title>Sravni.KG | Кредиты в Кыргызстане</title>
+        <title>Кредиты в Кыргызстане</title>
       </Head>
 
       <Box minW="704px">

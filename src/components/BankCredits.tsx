@@ -7,7 +7,6 @@ import { Credits } from "../interfaces/interface";
 import CSS from 'csstype';
 import Link from 'next/link';
 
-
 const fontStyle2: CSS.Properties = {
     fontSize: "small",
     color: "#000",
@@ -21,13 +20,13 @@ const fontStyle3: CSS.Properties = {
 }
 
 
-export const BankCredits = ({data, index}:{data:Credits, index:any}) => {
-
-
+export const BankCredits = ({data, index, role}:{data:Credits, index:any, role:any}) => {
 
     return (
         <Box boxShadow="false" mb={5} > 
-            <Container maxWidth="xl">
+            {
+                data != null? (
+                    <Container maxWidth="xl">
                 <Box border="1px" borderColor="#E6EAF0" p={5} bg={index % 2 === 0 ? "#FFF" : "#F4F5F5"}>
                 <Grid>
                     <GridItem>
@@ -82,18 +81,31 @@ export const BankCredits = ({data, index}:{data:Credits, index:any}) => {
                     </GridItem>
                     <GridItem>
                         
-                        
-                            <Text mt={7} style={{color: "#28467F", fontWeight: 600}}>
-                                <Link href="/">
-                                Узнать подробнее
-                                </Link>
-                            </Text>
-                        
+                        {
+                            role === "ROLE_STAFF"? (
+                                <>
+                                <Text> 
+                                    <Link href={"/dash/create/" + data.id}>Изменить</Link>
+                                </Text>
+                                <Text>
+                                    <Link href="/">Удалить</Link>
+                                </Text>
+                                </>
 
+                            ):(
+                                <Text mt={7} style={{color: "#28467F", fontWeight: 600}}>
+                                    <Link href="/">Узнать подробнее</Link>
+                                </Text>
+                            )
+                        }                        
                     </GridItem>
                 </SimpleGrid>
                 </Box>
             </Container>    
+                ):(
+                    <Text>Loading</Text>
+                )
+            }
         </Box>
     )
 }

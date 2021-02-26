@@ -50,6 +50,7 @@ export interface SearchCondition{
 }
 
 export interface Credits{
+    id: number;
     title: string;
     partner: Partner;
     condition: Condition;
@@ -68,7 +69,7 @@ export interface Requirement{
 
 export interface IdName{
     id: number;
-    name: string
+    name?: string
 }
 
 export interface BestOffers{
@@ -111,4 +112,35 @@ export interface PayDetail{
 export interface Currencies{
     currency: string;
     value: number
+}
+
+
+
+export interface CreditForm{
+    condition: {
+        additionalInfo?: string;
+        paymentType: IdName;
+        pledges: IdName[];
+        receiveTypes: IdName[];        
+    };
+    description: string;
+    documents: IdName[];
+    partnerCreditUrl: string;
+    purposes: IdName[];
+    rates: Rates[];
+    requirement:{
+        additionalInfo: string;
+        ageLimit: Limits;
+    };
+    title: string;
+}
+
+export interface Rates{
+    additionalInfo: string;
+    amountLimit: Limits;
+    commission: number;
+    currency: IdName;
+    effectiveRate: number;
+    rate: number;
+    termLimit: Limits;
 }

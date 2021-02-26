@@ -1,4 +1,5 @@
 import axios from "axios";
+import { CreditForm } from "../../src/interfaces/interface";
 import { SERVER_BASE_URL } from "../utils/constant";
 
 
@@ -21,6 +22,47 @@ const SearchAPI = {
         axios.get(`${SERVER_BASE_URL}/partners/${partnerId}`),
     getPartnerCredits: (partnerId:number) =>
         axios.get(`${SERVER_BASE_URL}/products/credits/bank/${partnerId}`),
+    getCreditByBank: (token:any) =>
+        axios.get(`${SERVER_BASE_URL}/products/credits`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }),
+    createCredit: async (formData:any, token:string) => {
+            const { data, status } = await axios.post(
+              `${SERVER_BASE_URL}/products/credits`,
+              JSON.stringify(formData),
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${token}`,
+                },
+              }
+            );
+            return {
+              data,
+              status,
+            };
+          },
+    getCreditById: async(id:number) => 
+          axios.get(`${SERVER_BASE_URL}/products/credits${id}`),
+    updateCredit: async(id:number, formData:CreditForm, token:string) => {
+        const { data, status } = await axios.patch(
+            `${SERVER_BASE_URL}/products/credits/${id}`,
+                JSON.stringify(formData),
+                {
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${token}`,
+                    }
+                }
+            );
+            return{
+                data,
+                status
+            }
+    }
+          
 }
 
 
