@@ -1,7 +1,7 @@
 import Cookie from "js-cookie";
 import Router from "next/router";
 import { LoginInputs } from "../../src/pages/dash/login";
-import { catchAxiosError } from "../../src/pages/dash/error";
+import { catchAxiosError } from "../../src/components/dash/error";
 import { post, get } from "./restService";
 
 export const COOKIES = {

@@ -1,10 +1,8 @@
 import Head from "next/head";
-import { Box, Center, GridItem, SimpleGrid, Text, Image, VStack, FormControl,
+import { Center, GridItem, SimpleGrid, Text, VStack, FormControl,
   FormLabel,
-  FormErrorMessage,
   FormHelperText,
 Input, 
-Grid,
 Alert,
   AlertIcon,
 Divider,
@@ -12,7 +10,7 @@ Button} from '@chakra-ui/react';
 import { useState } from 'react';
 import { login } from '../../../lib/api/loginService';
 import CSS from 'csstype';
-import { CurrencyDecorIcon, CurrencyDecorIconStyle2, LogoWhiteLogin } from "../../../public/images/icons/icons";
+import { CurrencyDecorIcon, LogoWhiteLogin } from "../../../public/images/icons/icons";
 
 export type LoginInputs = {
   username: string

@@ -11,7 +11,6 @@ import {
   MenuButton,
   Container, } from '@chakra-ui/react';
 import { privateRoute } from '../../../src/components/dash/privateRoute';
-import { COOKIES as Token } from '../../../lib/api/loginService';
 import CSS from 'csstype';
 import Router from "next/router";
 import useSWR from 'swr';

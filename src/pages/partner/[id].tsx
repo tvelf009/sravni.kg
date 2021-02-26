@@ -33,8 +33,8 @@ const Partner = ({partnerData, banksCreditsList}:{partnerData:any, banksCreditsL
                 ) : (
                     <>
                         <NextSeo
-                            title={"Кредиты от " + partnerData.name}
-                            description={"Персональный подбор кредитов от " + partnerData.name + ". Подробная информация по условиям кредитования, расчёт примерного графика погашения"}
+                            title={"Список кредитов" }
+                            description={"Персональный подбор кредитов. Подробная информация по условиям кредитования, расчёт примерного графика погашения"}
                             openGraph={{}}
                         />
                     <Head>
@@ -44,9 +44,6 @@ const Partner = ({partnerData, banksCreditsList}:{partnerData:any, banksCreditsL
 
                 )
             }
-
-        
-
 
         <Box minWidth="704px">
             <TopHeader/>
@@ -63,7 +60,7 @@ const Partner = ({partnerData, banksCreditsList}:{partnerData:any, banksCreditsL
             {
                 banksCreditsList != null ? (
                     banksCreditsList.map((item, index) => (
-                        <BankCredits data={item} key={index} index={index}/>
+                        <BankCredits role={"ROLE_USER"} data={item} key={index} index={index}/>
                     ))
                 ):(
                     <h1>Загрузка</h1>

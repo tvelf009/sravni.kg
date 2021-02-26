@@ -140,12 +140,9 @@ const CreateCredit = ({updateData, isNew, token, id}:{updateData:CreditForm, isN
     }
 
     if(isNew){
-      const { data, status } = await SearchAPI.updateCredit(id, submitData, token);
-
-      console.log(data, status);
-      
+      await SearchAPI.updateCredit(id, submitData, token);
     }else{
-      const result = await SearchAPI.createCredit(submitData,token);
+      await SearchAPI.createCredit(submitData,token);
     } 
     
     // console.log(result);

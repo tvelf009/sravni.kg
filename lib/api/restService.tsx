@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { catchAxiosError } from "../../src/pages/dash/error";
+import { catchAxiosError } from "../../src/components/dash/error";
 
 
 const baseConfig: AxiosRequestConfig = {
