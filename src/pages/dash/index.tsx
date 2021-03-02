@@ -31,7 +31,7 @@ const BackIndex = (ctx:any) => {
 
 
   const getCreatePage = async() => {
-    await Router.push("/dash/create");
+    await Router.push("/dash/create/new");
   }
 
   const fetcher = (url:string) => {
