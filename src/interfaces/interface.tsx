@@ -9,6 +9,11 @@ export interface Currency{
     name: string;
 }
 
+export interface BreadCrumb{
+    link: string;
+    name: string;
+}
+
 export interface Term{
     id: number;
     name: string;

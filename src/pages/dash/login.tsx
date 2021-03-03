@@ -1,12 +1,5 @@
 import Head from "next/head";
-import { Center, GridItem, SimpleGrid, Text, VStack, FormControl,
-  FormLabel,
-  FormHelperText,
-Input, 
-Alert,
-  AlertIcon,
-Divider,
-Button} from '@chakra-ui/react';
+import { Center, GridItem, SimpleGrid, Text, VStack, FormControl, FormLabel, FormHelperText, Input, Alert, AlertIcon, Divider, Button} from '@chakra-ui/react';
 import { useState } from 'react';
 import { login } from '../../../lib/api/loginService';
 import CSS from 'csstype';

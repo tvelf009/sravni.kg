@@ -9,9 +9,16 @@ import { BankCredits } from "../../components/BankCredits";
 import { Credits } from "../../interfaces/interface";
 import { Footer } from '../../components/Footer';
 import { NextSeo } from 'next-seo';
+import { BreadCrumb } from '../../interfaces/interface';
 
-
-
+const BrCrm:BreadCrumb[] = [{
+    link: "/dash/",
+    name: "Список кредитов"
+  },{
+    link: "#",
+    name: "Создание кредита"
+}]
+  
 
 
 const Partner = ({partnerData, banksCreditsList}:{partnerData:any, banksCreditsList:Credits[]}) => {
@@ -48,7 +55,7 @@ const Partner = ({partnerData, banksCreditsList}:{partnerData:any, banksCreditsL
         <Box minWidth="704px">
             <TopHeader/>
             <Header/>
-            <BreadcrumbCmpnt/>
+            <BreadcrumbCmpnt inData={BrCrm}/>
             {
                 partnerData != undefined? (
                     <BankTitle data={partnerData}/>

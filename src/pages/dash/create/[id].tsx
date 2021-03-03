@@ -16,7 +16,15 @@ import CSS from 'csstype';
 import { useState, useRef, ReactText } from 'react';
 import { CreditForm } from '../../../interfaces/interface';
 import SearchAPI from '../../../../lib/api/search';
+import { BreadCrumb } from '../../../interfaces/interface';
 
+const BrCrm:BreadCrumb[] = [{
+    link: "/dash/",
+    name: "Список кредитов"
+  },{
+    link: "#",
+    name: "Создание кредита"
+}]
 
 
 
@@ -216,7 +224,7 @@ const CreateCredit = ({updateData, isNew, token, id}:{updateData:CreditForm, isN
       <Box minWidth="704px">
         <TopHeader/>
         <Header/>        
-        <BreadcrumbCmpnt/>
+        <BreadcrumbCmpnt inData={BrCrm}/>
             <Container maxWidth="xl" mt={10} mb={10}>
                 <form onSubmit={submitForm}>
                   <FormControl >
