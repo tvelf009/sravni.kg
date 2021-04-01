@@ -11,7 +11,7 @@ import Router from "next/router";
 import useSWR from 'swr';
 import ServerCookie from "next-cookies";
 import { BankCredits } from '../../components/BankCredits';
-import { BreadCrumb } from '../../interfaces/interface';
+import { BreadCrumb, MyCredits } from '../../interfaces/interface';
 import Cookies from 'js-cookie';
 
 const boxStyle1:CSS.Properties = {
@@ -23,6 +23,7 @@ const BrCrm:BreadCrumb[] = [{
   link: "#",
   name: "Список кредитов"
 }]
+
 
 
 
@@ -59,10 +60,15 @@ const BackIndex = (ctx:any) => {
   const changeMode = () => {
     setMode(false)
     setBtText("Список продуктов");
+
   }
 
   const {data} = useSWR('https://sravni.kg:9090/api/v1/products/credits', fetcher);
 
+  const test = useSWR('https://sravni.kg:9090/api/v1/applications', fetcher);
+
+  console.log(test.data);
+  
   return (
     <>
 
@@ -106,17 +112,23 @@ const BackIndex = (ctx:any) => {
                 </Text>
               )
             ):(
-              <SimpleGrid>
-                <GridItem>
-                  Ожидает рассмотрения
-                </GridItem>
-                <GridItem>
-                  Заявка "Потребительских кредит" на сумму 10000 сом, на 3 месяца. 
-                </GridItem>
-                <GridItem>
-                  Подробнее
-                </GridItem>
-              </SimpleGrid>
+              test != null? (
+                test.data.map((item:MyCredits, index:number) => (
+                  <SimpleGrid columns={[1, null, 12]} style={boxStyle1} mb={5} p={5} key={index}>
+                    <GridItem colSpan={2}>
+                      {item.step}
+                    </GridItem>
+                    <GridItem colSpan={8}>
+                      Заявка "{item.credit.title}" на сумму {item.creditAmount}  сом, на 3 месяца. 
+                    </GridItem>
+                    <GridItem colSpan={2}>
+                      Подробнее 
+                    </GridItem>
+                  </SimpleGrid>
+                ))
+              ):(
+                null
+              )
             )
           }
         </Container>

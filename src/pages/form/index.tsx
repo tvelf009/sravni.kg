@@ -85,7 +85,6 @@ const FormIndex = ({token}:{token:string}) => {
 
     
     const {data} = await SearchAPI.createApplication(submitData,token);
-    
     console.log(data);
     
   }

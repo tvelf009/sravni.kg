@@ -29,7 +29,13 @@ export const TopHeader = () => {
     }
 
     const getProfile = () => {
-        Router.push("/dash");
+
+        if(Cookies.get("role") == "ROLE_STAFF"){
+            Router.push("/dash");
+        }else{
+            Router.push("/user");
+        }
+        
     }
 
 
