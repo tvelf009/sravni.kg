@@ -56,7 +56,7 @@ export const Purposes = () => {
                             gap={0}
                             >
                             <GridItem colSpan={2} >
-                                <Text fontSize="1xl" fontWeight="500" pt={2} pl={2}>
+                                <Text fontSize="2xl" fontWeight="500" pt={2} pl={2}>
                                     {item.title}
                                 </Text>
                             </GridItem>

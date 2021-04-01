@@ -17,3 +17,5 @@ export const get = (url: string, data: any) => {
     }
   }).catch(catchAxiosError);
 };
+
+

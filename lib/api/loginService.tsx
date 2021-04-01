@@ -1,6 +1,6 @@
 import Cookie from "js-cookie";
 import Router from "next/router";
-import { LoginInputs } from "../../src/pages/dash/login";
+import { LoginInputs, RegInputs } from "../../src/pages/dash/login";
 import { catchAxiosError } from "../../src/components/dash/error";
 import { post, get } from "./restService";
 
@@ -29,5 +29,25 @@ export async function login(inputs: LoginInputs): Promise<string | void> {
   Cookie.set(COOKIES.role, authority, {expires: 1});
   Cookie.set(COOKIES.lastName, lastName, {expires: 1});
   Cookie.set(COOKIES.username, username, {expires: 1});
-  await Router.push("/dash/");
+  if(COOKIES.role == "ROLE_STAFF"){
+    await Router.push("/dash/");
+  }else{
+    await Router.push("/user/")
+  }
+  
+}
+
+export async function registration(inputs: RegInputs): Promise<string | void> {
+
+  const data = inputs;
+
+  const res: any = await post("/auth/register", data).catch(catchAxiosError);
+  if (res.error) {
+        return res.error;
+  } else if (!res.data || !res.data.access_token) {
+    return "Something went wrong!";
+  }
+
+  console.log(res);
+  
 }

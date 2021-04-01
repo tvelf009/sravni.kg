@@ -62,12 +62,12 @@ const purposesArray: Purposes[] = [
 
 const currencyArray: Currency[] = [
     {
-        id: 1,
+        id: 2,
         name: "Кыргызский сом",
         code: "KGZ"
     },
     {
-        id: 2,
+        id: 3,
         name: "Американский доллар",
         code: "RUB"
     }
@@ -141,12 +141,13 @@ const termArray: Term[] = [
 
 ]
 
+
 export const CreditSearch = () => {
 
     const [amount, setAmount] = React.useState(10000);
     const [term, setTerm] = React.useState(3);
     const [purpose, setPurpose] = React.useState(1);
-    const [currency, setCurrency] = React.useState(1);
+    const [currency, setCurrency] = React.useState(2);
     const [credit, setCredit] = React.useState([]);
     const [termName, setTermName] = React.useState(termArray[0].name);
     const [purposeName, setPurposeName] = React.useState(purposesArray[0].name);
@@ -180,12 +181,11 @@ export const CreditSearch = () => {
         setCurrency(e.target.value)
     }
 
+
     const getResult = async() => {
         // const { data, status } = await SearchAPI.all();
         setShow(true)
         const {data} = await SearchAPI.getCredits(amount, term,purpose, currency);
-
-        
         
         setSearchCondition({
             amount: amount,
@@ -193,7 +193,6 @@ export const CreditSearch = () => {
             currency: currency,
             term: term
         })
-
 
         setCredit([]);
         setCredit(data);

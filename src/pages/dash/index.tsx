@@ -1,9 +1,10 @@
 import { TopHeader } from '../../components/TopHeader';
+import React from 'react';
 import { Header } from '../../components/Header';
 import Head from "next/head";
 import { Footer } from '../../components/Footer';
 import { BreadcrumbCmpnt } from '../../components/BreadcrumbCmpnt';
-import { Text, Box, Button, Menu, MenuButton, Container, Spacer,Flex, Heading } from '@chakra-ui/react';
+import { Text, Box, Button, Container, Spacer,Flex, Heading, SimpleGrid, GridItem } from '@chakra-ui/react';
 import { privateRoute } from '../../../src/components/dash/privateRoute';
 import CSS from 'csstype';
 import Router from "next/router";
@@ -26,6 +27,9 @@ const BrCrm:BreadCrumb[] = [{
 
 
 const BackIndex = (ctx:any) => {
+
+  const [mode, setMode] = React.useState(true);
+  const [btText, setBtText] = React.useState("Список заявок");
 
 
   const getCreatePage = async() => {
@@ -52,6 +56,11 @@ const BackIndex = (ctx:any) => {
      }).then(response => response.json());
   }
 
+  const changeMode = () => {
+    setMode(false)
+    setBtText("Список продуктов");
+  }
+
   const {data} = useSWR('https://sravni.kg:9090/api/v1/products/credits', fetcher);
 
   return (
@@ -69,15 +78,15 @@ const BackIndex = (ctx:any) => {
         <Box style={boxStyle1} p={2} mt={5} mb={5}>
         <Flex>
           <Box p="2">
-            <Heading size="md">{Cookies.get('lastname')}</Heading>
+            <Heading size="md" suppressHydrationWarning={true}>{Cookies.get('lastname')}</Heading>
           </Box>
           <Spacer />
           <Box>
             <Button colorScheme="teal" mr="4" variant="outline" onClick={getCreatePage}>
               Добавить продукт
             </Button>
-            <Button colorScheme="teal" mr="4" variant="outline">
-              Список заявок
+            <Button colorScheme="teal" mr="4" variant="outline" onClick={changeMode}>
+              {btText}
             </Button>
             <Button colorScheme="pink" mr="4" variant="outline" onClick={logOut}>
               Выход
@@ -85,19 +94,33 @@ const BackIndex = (ctx:any) => {
           </Box>
         </Flex>
         </Box>
-        </Container>
-
-          {
-            data != null? (
-              data.map((item:any, index:number) => (
-                <BankCredits data={item} key={index} index={index} role={ServerCookie(ctx).role} />
-             ))
+        {
+            mode? (
+              data != null? (
+                data.map((item:any, index:number) => (
+                  <BankCredits data={item} key={index} index={index} role={ServerCookie(ctx).role} />
+               ))
+              ):(
+                <Text> 
+                  Загрузка данных
+                </Text>
+              )
             ):(
-              <Text> 
-                Загрузка данных
-              </Text>
+              <SimpleGrid>
+                <GridItem>
+                  Ожидает рассмотрения
+                </GridItem>
+                <GridItem>
+                  Заявка "Потребительских кредит" на сумму 10000 сом, на 3 месяца. 
+                </GridItem>
+                <GridItem>
+                  Подробнее
+                </GridItem>
+              </SimpleGrid>
             )
           }
+        </Container>
+          
         <Footer/>
       </Box>
     </>

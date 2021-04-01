@@ -8,8 +8,14 @@ import { PhoneIcon, Icon, EmailIcon } from '@chakra-ui/icons';
 import { AiOutlineWhatsApp } from 'react-icons/ai';
 import { IconContext } from "react-icons";
 import { Footer } from "../../components/Footer";
+import { BreadCrumb } from '../../interfaces/interface';
 
 
+const BrCrm:BreadCrumb[] = [{
+    link: "#",
+    name: "О нас"
+  }]
+  
 
 const About = () => {
 
@@ -22,7 +28,7 @@ const About = () => {
         </Head>
         <TopHeader/>
         <Header/>
-        <BreadcrumbCmpnt/>
+        <BreadcrumbCmpnt inData={BrCrm} />
         <Box minWidth="704px" mt={15}>
             <Container maxWidth="xl">
                 <Text fontSize="4xl" fontWeight="500"  as="h1">

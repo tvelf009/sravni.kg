@@ -10,7 +10,10 @@ import { HamburgerIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 
 
+
 export const MainMenu = () => {
+
+    
 
     return (
             
@@ -30,8 +33,7 @@ export const MainMenu = () => {
                 <Menu>
                 <MenuButton 
                     as={Button}
-                    variant="cus-menu"
-                    >
+                    variant="cus-menu">
                     Кредиты
                 </MenuButton>
                 <MenuList>
@@ -59,7 +61,9 @@ export const MainMenu = () => {
                             Связаться с нами
                     </MenuButton>
                     </Link>
+
                 </Menu>
+                
             </Box>
             <Box display={{base: "block",  sm: "block", md: "none"}}>
                 <Menu>
@@ -85,6 +89,9 @@ export const MainMenu = () => {
 
     )
 }
+
+
+
 
 
 

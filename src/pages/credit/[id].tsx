@@ -11,6 +11,14 @@ import { ParsedUrlQuery } from 'querystring';
 import { Appointment } from '../../components/Appointment';
 import { Calculate } from '../../components/Calculate';
 import { Box } from '@chakra-ui/react';
+import { BreadCrumb } from '../../interfaces/interface';
+import Cookie from "js-cookie";
+
+
+const BrCrm:BreadCrumb[] = [{
+  link: "#",
+  name: "Информация о кредите"
+}]
 
 
 
@@ -21,6 +29,11 @@ const CreditPage = () => {
   const router = useRouter();
   const condition:ParsedUrlQuery = router.query;
 
+  
+  Cookie.set("creditId", condition.id + "");
+  Cookie.set("creditAmount", condition.amount + "");
+  Cookie.set("creditPurpose", condition.purposeId + "");
+  Cookie.set("creditTerm", condition.term + "");
 
   const {data} = useSWR("https://sravni.kg:9090/api/v1/products/credits/" + condition.id, fetcher);
   const payDetail = useSWR("https://sravni.kg:9090/api/v1/payments?amount=" + condition.amount + "&term=" + condition.term + "&rate=" + condition.rate + "&type=annuity", fetcher);
@@ -30,13 +43,13 @@ const CreditPage = () => {
 
       <Head>
         {
-          data != null? <title>Sravni.KG | {data.partner.name + " " + data.title}</title> : <title>Sravni.KG | Ваш помощник при выборе кредита</title>
+          data != null? <title>{data.partner.name + " " + data.title}</title> : <title>Sravni.KG | Ваш помощник при выборе кредита</title>
         }        
       </Head>
       <Box minWidth="704px">
         <TopHeader/>
         <Header/>
-        <BreadcrumbCmpnt/>
+        <BreadcrumbCmpnt inData={BrCrm}/>
         {
           data != null? (
             <>

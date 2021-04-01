@@ -38,7 +38,7 @@ export const Currency = ({data}: {data:Currencies[]}) => {
                 Официальные курсы валют Национального банка Кыргызстана.
             </Text>
             <Text style={fontStyle1}>
-            * цена указана в долларах
+            * цена указана в сомах
             </Text>
           </Container>
         </Box>

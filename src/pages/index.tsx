@@ -7,16 +7,16 @@ import Head from "next/head";
 import { Purposes } from '../components/Purposes';
 import { CreditSearch } from '../components/CreditSearch';
 import { Footer } from '../components/Footer';
-import { Partners } from '../components/Partners';
 import SearchAPI from '../../lib/api/search';
 import { Category } from '../components/Category';
 import { Box } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
+import {Partners} from '../components/Partners';
 
 
 
-const Index = ({currencyData, partnersData, potreb, auto, business, education}: any) => (
-
+const Index = ({currencyData, partnersData,  potreb, auto, business, education}: any) => (
+    
     <>
       <NextSeo
         title="Кредиты в Кыргызстанe"
@@ -48,7 +48,11 @@ const Index = ({currencyData, partnersData, potreb, auto, business, education}: 
 );
 
 
+
+
 export async function getStaticProps() {
+
+
   // const {data} = await SearchAPI.partners();
   const partners = await SearchAPI.partners();
   const currency = await SearchAPI.getCurrency();
@@ -57,7 +61,6 @@ export async function getStaticProps() {
   const business = await SearchAPI.offersBusiness();
   const education = await SearchAPI.offersEduc();
 
- 
   return{
     props:{
       partnersData: partners.data,

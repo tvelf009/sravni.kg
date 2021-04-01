@@ -4,10 +4,10 @@ import { SERVER_BASE_URL } from "../utils/constant";
 
 
 const SearchAPI = {
-    partners: () => 
+    partners: async() => 
         axios.get(`${SERVER_BASE_URL}/partners`),
     getCredits: (amount:number, term:number, purpose:number, currency:number) => 
-        axios.get(`${SERVER_BASE_URL}/products/credits/search?amount=${amount}&term=${term}&purpose=${purpose}&currency=${currency}`),
+    axios.get(`${SERVER_BASE_URL}/products/credits/search?amount=${amount}&term=${term}&purpose=${purpose}&currency=${currency}`),
     getCurrency: () =>
         axios.get(`${SERVER_BASE_URL}/exchange-rates`),
     offersPotreb: () =>
@@ -28,9 +28,32 @@ const SearchAPI = {
                 'Authorization': `Bearer ${token}`
             }
         }),
+    getMyCredits: (token:any) =>
+        axios.get(`${SERVER_BASE_URL}/applications/my`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }),
     createCredit: async (formData:any, token:string) => {
             const { data, status } = await axios.post(
               `${SERVER_BASE_URL}/products/credits`,
+              JSON.stringify(formData),
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${token}`,
+                },
+              }
+            );
+            return {
+              data,
+              status,
+            };
+          },
+
+    createApplication: async (formData:any, token:string) => {
+            const { data, status } = await axios.post(
+              `${SERVER_BASE_URL}/applications`,
               JSON.stringify(formData),
               {
                 headers: {

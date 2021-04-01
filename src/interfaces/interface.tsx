@@ -149,3 +149,21 @@ export interface Rates{
     rate: number;
     termLimit: Limits;
 }
+
+export interface SearchSelected{
+    credit: {
+        id: number
+      },
+    creditAmount: number,
+    creditPurpose: number,
+    creditTerm: number,
+}
+
+export interface MyCredits{
+    step: string
+    creditAmount: number
+    creditTerm: number
+    credit: {
+        title: string
+    }
+}

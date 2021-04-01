@@ -42,7 +42,7 @@ export const Result = ({data, bgcolorid, currency, searchCondition}:{data:Credit
     const [credit] = React.useState(data);
 
     console.log(currency);
-    
+
 
     return (
         <Box bg={bgcolorid % 2 === 0 ? "#FFF" : "#F4F5F5"} mt={2} border="1px" borderColor="#E6EAF0">

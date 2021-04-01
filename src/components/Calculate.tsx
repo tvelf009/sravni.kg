@@ -1,8 +1,10 @@
-import { Box, Container, Text, Grid, GridItem, Center, SimpleGrid } from '@chakra-ui/react';
+import { Box, Container, Text, Grid, GridItem, Center, SimpleGrid, Button } from '@chakra-ui/react';
 import React from 'react';
 import { PayDetail } from '../interfaces/interface';
 import { CurrencyDecorIcon, CheckIcon } from '../../public/images/icons/icons';
 import CSS from 'csstype';
+import Router from "next/router";
+
 
 const gridStyle:CSS.Properties = {
     background: "#F7F9FA",
@@ -28,15 +30,16 @@ const fontStyle2:CSS.Properties = {
     fontWeight: 600
 }
 
+const getOnlineOrder = () => {
+    console.log('sss');
+    Router.push("/form/");
+}
+
 export const Calculate = ({data, condition}:{data:PayDetail[], condition:any}) => {
 
     if(data === undefined){
         data = [];
     }
-
-    
-    
-
     return (
         <Box boxShadow="base">
             <Container maxWidth="xl" pt={10} pb={10}>
@@ -133,7 +136,11 @@ export const Calculate = ({data, condition}:{data:PayDetail[], condition:any}) =
                             <Text style={fontStyle2} mt={3}>
                                 {data[0] != undefined? "от " + data[0].monthlyPayment + " сом" : "загрузка"}
                             </Text>
+                            <Button mt={10} onClick={getOnlineOrder}>
+                                Отправить онлайн заявку
+                            </Button>
                         </Box>
+
                     </GridItem>
                 </SimpleGrid>
             </Container>
