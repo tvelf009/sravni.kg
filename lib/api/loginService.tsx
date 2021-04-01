@@ -29,7 +29,10 @@ export async function login(inputs: LoginInputs): Promise<string | void> {
   Cookie.set(COOKIES.role, authority, {expires: 1});
   Cookie.set(COOKIES.lastName, lastName, {expires: 1});
   Cookie.set(COOKIES.username, username, {expires: 1});
-  if(COOKIES.role == "ROLE_STAFF"){
+
+  console.log(COOKIES.role);
+  
+  if(authority === "ROLE_STAFF"){
     await Router.push("/dash/");
   }else{
     await Router.push("/user/")
